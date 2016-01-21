@@ -13,7 +13,6 @@ _List of all things that need doing._
 
 ### Unfinished Items
 
-- ** Setup CMake build system
 - ** Get dev team together
 - ** Start early development process
 
