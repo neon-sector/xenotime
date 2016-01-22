@@ -1,4 +1,9 @@
-# x e n o t i m e
-### w h a t   i s   i t ?
-Xenotime is a C++ OpenGL/SFML-based 2D/3D game engine. Its primary focuses
-are organization, simplicity, consistency, and usability.
+# `X E N O T I M E`
+
+### What the heck is XENOTIME?
+
+**Xenotime** is a Rust/Piston-based 2D/3D game engine/platform. Its primary focuses are efficency, consistency, and immersion.
+
+### What's with the crazy name?
+
+It comes pretty much directly from the mineral [Xenotime](https://en.wikipedia.org/wiki/Xenotime). It was originally a codename, but I decided it should just be final. I chose this because it reminded me of Java's `System.nanoTime()` function, which is used in game loops. Don't let that mislead you, though. Java isn't relevant in this case.
