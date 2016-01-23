@@ -12,6 +12,7 @@ This document is the designs and specifications sheet for the Xenotime Game Engi
 ## Index
 
 - Engine Information and Specifications
+- Directory Structure
 - Initialization
 - Loading Resources
 - Resource Storage
@@ -37,6 +38,10 @@ This document is the designs and specifications sheet for the Xenotime Game Engi
 
 **Xenotime** is a 2D/3D game engine/platform primarily written in Rust, C, and minimal amounts of Assembly. The graphical engines (the 3D Rendering Engine, the Shaders Engine, and the Post-Processing Effects Engine, etc.) use OpenGL. Shaders are all written in GLSL.
 Xenotime is designed specifically so it can be **highly compatible**, meaning it is cross-platform, integrates with Steam or runs standalone, and has (albeit limited) backwards and forwards compatibility.
+
+## Directory Structure
+
+The distributed package is only a slightly different version of the source tree. The `script/package.sh` script simply creates a copy of the repository (minus the `deploy/` directory), removes all source files, and archives it into a tarball (or the archive/compression specified with `-a` or `--archive`). It will throw an error if you haven't built yet.
 
 ## Initialization
 
