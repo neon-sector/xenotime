@@ -2,7 +2,8 @@
 
 **Version 0.0.1**
 
-This document is the designs and specifications sheet for the Xenotime Game Engine. This spec will be updated frequently. Design proposals should update this file before changing any code content!
+This document is the designs and specifications sheet for the Xenotime Game Engine. This spec will be updated frequently. Design
+proposals should update this file before changing any code content!
 
 ## Markdown Standards/Guidelines
 
@@ -18,16 +19,16 @@ This document is the designs and specifications sheet for the Xenotime Game Engi
 - Resource Storage
 - Game Loop
 - Modules
- - External
-  - Audio Effects
-  - Shader Effects
- - Internal
-  - The Core Engine
-  - The Audio Engine
-  - The Post-Processing Effects Engine
-  - The UI Framework
-  - The Map Loader
-  - The Model Loader
+	- External
+		- Audio Effects
+		- Shader Effects
+	- Internal
+		- The Core Engine
+		- The Audio Engine
+		- The Post-Processing Effects Engine
+		- The UI Framework
+		- The Map Loader
+		- The Model Loader
 - Maps
 - Models
 - Scripting
@@ -36,11 +37,16 @@ This document is the designs and specifications sheet for the Xenotime Game Engi
 
 ## Engine Information and Specifications
 
-**Xenotime** is a 2D/3D game engine/platform primarily written in Rust. The graphical engines (the 3D Rendering Engine, the Shaders Engine, and the Post-Processing Effects Engine, etc.) use OpenGL and Piston. Shaders are all written in GLSL. Xenotime is designed specifically so it can be **highly compatible**, meaning it is cross-platform, integrates with Steam or runs standalone, and has (albeit limited) backwards and forwards compatibility.
+**Xenotime** is a 2D/3D game engine/platform primarily written in Rust. The graphical engines (the 3D Rendering Engine, the
+Shaders Engine, and the Post-Processing Effects Engine, etc.) use OpenGL and Piston. Shaders are all written in GLSL. Xenotime
+is designed specifically so it can be **highly compatible**, meaning it is cross-platform, integrates with Steam or runs
+standalone, and has (albeit limited) backwards and forwards compatibility.
 
 ## Directory Structure
 
-The distributed package is only a slightly different version of the source tree. The `script/package.sh` script simply creates a copy of the repository (minus the `deploy/` directory), removes all source files, and archives it into a tarball (or the archive/compression specified with `-a` or `--archive`). It will throw an error if you haven't built yet.
+The distributed package is only a slightly different version of the source tree. The `script/package.sh` script simply creates a
+copy of the repository (minus the `deploy/` directory), removes all source files, and archives it into a tarball (or the
+archive/compression specified with `-a` or `--archive`). It will throw an error if you haven't built yet.
 
 ## Initialization
 
@@ -52,7 +58,8 @@ The distributed package is only a slightly different version of the source tree.
 
 ## Modules
 
-Xenotime is a modular engine. Everything in it, including the core, is a module. Each module has a specific purpose, such as audio processing or map loading. Modules are Rust crates, specifically built for Xenotime.
+Xenotime is a modular engine. Everything in it, including the core, is a module. Each module has a specific purpose, such as
+audio processing or map loading. Modules are Rust crates, specifically built for Xenotime.
 
 ### External
 
@@ -68,7 +75,8 @@ Xenotime is a modular engine. Everything in it, including the core, is a module.
 
 ### Internal
 
-**Internal Modules** can also be called Engine Modules, or just Engines, as they are smaller parts that essentially make up the game engine itself as a whole. Most of these are stages in the game loop, except of course the loop itself.
+**Internal Modules** can also be called Engine Modules, or just Engines, as they are smaller parts that essentially make up the
+game engine itself as a whole. Most of these are stages in the game loop, except of course the loop itself.
 
 #### The Game Loop
 
@@ -88,11 +96,16 @@ The **UI Framework** is a windowing system and GUI toolkit.
 
 #### The Map Loader
 
-The Map Loader is quick and seamless in design. Map files (`.xmap`) are minimal binary files, so that they can load very quickly.
+The Map Loader is quick and seamless in design. Map files (`.xmap`) are minimal binary files, so that they can load very
+quickly.
 
 ##### How it works
 
-Don't you hate how maps load so slowly in other engines, and pause the game too? `xmap-load`, Unlike other map loaders, does not operate on the same thread as the game. When a map is loaded, a new thread is spawned to load the next map, and it is merged with the currently loaded map. Once the old map is out of range, it is unloaded. Maps are loaded ahead of time, and there's usually about 2-4 maps loaded at all times. It's up to the game designer to actually use this right, because this design quite heavily relies on good trigger placement.
+Don't you hate how maps load so slowly in other engines, and pause the game too? `xmap-load`, Unlike other map loaders, does not
+operate on the same thread as the game. When a map is loaded, a new thread is spawned to load the next map, and it is merged
+with the currently loaded map. Once the old map is out of range, it is unloaded. Maps are loaded ahead of time, and there's
+usually about 2-4 maps loaded at all times. It's up to the game designer to actually use this right, because this design quite
+heavily relies on good trigger placement.
 
 #### The Model Loader
 
