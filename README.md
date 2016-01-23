@@ -4,7 +4,7 @@
 
 **XENOTIME** is a Rust/Piston-based 2D/3D game engine/platform. Its primary focuses are efficency, consistency, and immersion.
 
-**Indes Note:** XENOTIME is currently in its early stages. We're still laying out the first version of the design concept, so
+**Note:** XENOTIME is currently in its early stages. We're still laying out the first version of the design concept, so
 nothing is implemented yet.
 
 ### What's with the crazy name?
