@@ -8,7 +8,7 @@ proposals should update this file before changing any code content!
 ## Markdown Standards/Guidelines
 
 - **Maximum column width** should be **128 characters**
-- Lists should **prefer** `-` over `*` or `+`
+- Lists should **prefer `-`** over `*` or `+`
 
 ## Index
 
@@ -62,7 +62,7 @@ audio processing or map loading. Modules are Rust crates, specifically built for
 
 ### External
 
-**External Modules** are called **Addons**. Addons are placed in the `xenotime/bin/mod/ext/` directory
+**External Modules** are called **Addons**. Addons are placed in the `bin/mod/ext/` directory
 
 #### Audio Effects
 
@@ -95,7 +95,7 @@ The **UI Framework** is a windowing system and GUI toolkit.
 
 #### The Map Loader
 
-The Map Loader is quick and seamless in design. Map files (`.xmap`) are minimal binary files, so that they can load very
+The Map Loader (`xmap-load`) is quick and seamless in design. Map files (`.xmap`, placed in `res/map`) are minimal binary files, so that they can load very
 quickly.
 
 ##### How it works
@@ -112,7 +112,7 @@ heavily relies on good trigger placement.
 
 ## Maps
 
-
+Maps in XENOTIME are `.xmap` files. They are created with `xenomap` and loaded into the engine with `xmap-load`.
 
 ## Models
 
