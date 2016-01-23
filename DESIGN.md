@@ -2,7 +2,7 @@
 
 **Version 0.0.1**
 
-This document is the design sheet for the Xenotime Game Engine.
+This document is the designs and specifications sheet for the Xenotime Game Engine. This spec will be updated frequently. Design proposals should update this file before changing any code content!
 
 ## Index
 
