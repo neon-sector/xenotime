@@ -36,8 +36,7 @@ This document is the designs and specifications sheet for the Xenotime Game Engi
 
 ## Engine Information and Specifications
 
-**Xenotime** is a 2D/3D game engine/platform primarily written in Rust, C, and minimal amounts of Assembly. The graphical engines (the 3D Rendering Engine, the Shaders Engine, and the Post-Processing Effects Engine, etc.) use OpenGL. Shaders are all written in GLSL.
-Xenotime is designed specifically so it can be **highly compatible**, meaning it is cross-platform, integrates with Steam or runs standalone, and has (albeit limited) backwards and forwards compatibility.
+**Xenotime** is a 2D/3D game engine/platform primarily written in Rust. The graphical engines (the 3D Rendering Engine, the Shaders Engine, and the Post-Processing Effects Engine, etc.) use OpenGL and Piston. Shaders are all written in GLSL. Xenotime is designed specifically so it can be **highly compatible**, meaning it is cross-platform, integrates with Steam or runs standalone, and has (albeit limited) backwards and forwards compatibility.
 
 ## Directory Structure
 
@@ -53,11 +52,11 @@ The distributed package is only a slightly different version of the source tree.
 
 ## Modules
 
-Xenotime is a modular engine. Everything in it, including the core, is a module. Each module has a specific purpose, such as audio processing or map loading. Modules are `.rlib` files.
+Xenotime is a modular engine. Everything in it, including the core, is a module. Each module has a specific purpose, such as audio processing or map loading. Modules are Rust crates, specifically built for Xenotime.
 
 ### External
 
-**External Modules** are called **Addons**. They can be written in Rust, C, Python, or XenoScript. Addons are placed in the `xenotime/bin/mod/ext/` directory
+**External Modules** are called **Addons**. Addons are placed in the `xenotime/bin/mod/ext/` directory
 
 #### Audio Effects
 
@@ -93,7 +92,7 @@ The Map Loader is quick and seamless in design. Map files (`.xmap`) are minimal 
 
 ##### How it works
 
-Unlike other map loaders, it does not operate on the same thread. When the next map trigger is activated, a new thread is spawned to load the next map, and it is merged with the currently loaded map. Once the unload map trigger activates, the old map is unloaded.
+Don't you hate how maps load so slowly in other engines, and pause the game too? `xmap-load`, Unlike other map loaders, does not operate on the same thread as the game. When a map is loaded, a new thread is spawned to load the next map, and it is merged with the currently loaded map. Once the old map is out of range, it is unloaded. Maps are loaded ahead of time, and there's usually about 2-4 maps loaded at all times. It's up to the game designer to actually use this right, because this design quite heavily relies on good trigger placement.
 
 #### The Model Loader
 
