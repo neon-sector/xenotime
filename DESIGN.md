@@ -1,5 +1,7 @@
 # Xenotime Design Sheet
 
+**Version 0.0.1**
+
 This document is the design sheet for the Xenotime Game Engine.
 
 ## Index
