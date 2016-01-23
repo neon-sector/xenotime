@@ -1,8 +1,8 @@
-# Xenotime Design Sheet
+# XENOTIME Design Sheet
 
 **Version 0.0.1**
 
-This document is the designs and specifications sheet for the Xenotime Game Engine. This spec will be updated frequently. Design
+This document is the designs and specifications sheet for the XENOTIME Game Engine. This spec will be updated frequently. Design
 proposals should update this file before changing any code content!
 
 ## Markdown Standards/Guidelines
@@ -36,8 +36,8 @@ proposals should update this file before changing any code content!
 
 ## Engine Information and Specifications
 
-**Xenotime** is a 2D/3D game engine/platform primarily written in Rust. The graphical engines (the 3D Rendering Engine, the
-Shaders Engine, and the Post-Processing Effects Engine, etc.) use OpenGL and Piston. Shaders are all written in GLSL. Xenotime
+**XENOTIME** is a 2D/3D game engine/platform primarily written in Rust. The graphical engines (the 3D Rendering Engine, the
+Shaders Engine, and the Post-Processing Effects Engine, etc.) use OpenGL and Piston. Shaders are all written in GLSL. XENOTIME
 is designed specifically so it can be **highly compatible**, meaning it is cross-platform, integrates with Steam or runs
 standalone, and has (albeit limited) backwards and forwards compatibility.
 
@@ -57,8 +57,8 @@ archive/compression specified with `-a` or `--archive`). It will throw an error 
 
 ## Modules
 
-Xenotime is a modular engine. Everything in it, including the core, is a module. Each module has a specific purpose, such as
-audio processing or map loading. Modules are Rust crates, specifically built for Xenotime.
+XENOTIME is a modular engine. Everything in it, including the core, is a module. Each module has a specific purpose, such as
+audio processing or map loading. Modules are Rust crates, specifically built for XENOTIME.
 
 ### External
 
