@@ -33,7 +33,6 @@ proposals should update this file before changing any code content!
 - Models
 - Scripting
 - The Console
-- Templates
 
 ## Engine Information and Specifications
 
@@ -122,10 +121,6 @@ heavily relies on good trigger placement.
 ## Scripting/Configuration
 
 
-
-## Templates
-
-**Templates** are basically the configuration state of the engine. Template names should be in `UPPER_SNAKE_CASE`.
 
 ## The Console
 
