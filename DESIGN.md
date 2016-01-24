@@ -24,11 +24,16 @@ proposals should update this file before changing any code content!
 		- Shader Effects
 	- Internal
 		- The Core Engine
+			- Game Loop
+			- Tick
+			- Render
 		- The Audio Engine
 		- The Post-Processing Effects Engine
 		- The UI Framework
 		- The Map Loader
 		- The Model Loader
+		- The Material Loader
+		- The Audio Loader
 - Maps
 - Models
 - Scripting
@@ -47,14 +52,6 @@ The distributed package is only a slightly different version of the source tree.
 copy of the repository (minus the `deploy/` directory), removes all source files, and archives it into a tarball (or the
 archive/compression specified with `-a` or `--archive`). It will throw an error if you haven't built yet.
 
-## Initialization
-
-
-
-## Game Loop
-
-
-
 ## Modules
 
 XENOTIME is a modular engine. Everything in it, including the core, is a module. Each module has a specific purpose, such as
@@ -64,30 +61,10 @@ audio processing or map loading. Modules are Rust crates, specifically built for
 
 **External Modules** are called **Addons**. Addons are placed in the `bin/mod/ext/` directory
 
-#### Audio Effects
-
-
-
-#### Shader Effects
-
-
-
 ### Internal
 
 **Internal Modules** can also be called Engine Modules, or just Engines, as they are smaller parts that essentially make up the
 game engine itself as a whole. Most of these are stages in the game loop, except of course the loop itself.
-
-#### The Game Loop
-
-
-
-#### The Audio Engine
-
-
-
-#### The Post-Processing Effects Engine
-
-
 
 #### The UI Framework
 
@@ -106,21 +83,9 @@ with the currently loaded map. Once the old map is out of range, it is unloaded.
 usually about 2-4 maps loaded at all times. It's up to the game designer to actually use this right, because this design quite
 heavily relies on good trigger placement.
 
-#### The Model Loader
-
-
-
 ## Maps
 
 Maps in XENOTIME are `.xmap` files. They are created with `xenomap` and loaded into the engine with `xmap-load`.
-
-## Models
-
-
-
-## Scripting/Configuration
-
-
 
 ## The Console
 
