@@ -7,6 +7,8 @@
 **Note:** XENOTIME is currently in its early stages. We're still laying out the first version of the design concept, so
 nothing is implemented yet.
 
+Credit to **[@ticki](https://github.com/ticki)** for the logo
+
 ### What's with the crazy name?
 
 It comes pretty much directly from the mineral [Xenotime](https://en.wikipedia.org/wiki/Xenotime). It was originally a codename,
