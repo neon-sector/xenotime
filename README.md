@@ -1,4 +1,4 @@
-# `X E N O T I M E`
+<img alt="XENOTIME" height="80" src="res/xenotime/logo.png">
 
 ### What the heck is XENOTIME?
 
