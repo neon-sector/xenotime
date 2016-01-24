@@ -1,4 +1,6 @@
-<img alt="XENOTIME" height="80" src="res/xenotime/logo.png">
+# <img alt="XENOTIME" height="80" src="res/xenotime/logo.png">
+
+[![Travis Build Status](https://travis-ci.org/neon-sector/xenotime.svg?branch=master)](https://travis-ci.org/neon-sector/xenotime)
 
 ### What the heck is XENOTIME?
 
