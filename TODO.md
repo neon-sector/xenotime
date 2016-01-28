@@ -13,6 +13,7 @@ added in the "Notes" section.
 - Start early development process
 - Set up build system (Just Cargo? Makefile/Cargo? Scripts/Cargo?)
 - Finish design v1.0.0
+- Write CONTRIBUTING.md
 
 ### Finished Items
 
