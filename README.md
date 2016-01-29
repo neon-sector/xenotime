@@ -9,7 +9,7 @@
 **Note:** XENOTIME is currently in its early stages. We're still laying out the first version of the design concept, so
 nothing is implemented yet.
 
-Credit to **[@ticki](https://github.com/ticki)** for the logo
+Thanks to **[@ticki](https://github.com/ticki)** for the logo
 
 ### What's with the crazy name?
 
