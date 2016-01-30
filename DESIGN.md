@@ -8,22 +8,20 @@ proposals should update this file before changing any code content!
 ## Markdown Standards/Guidelines
 
 - **Maximum column width** should be **128 characters**
-- Lists should **prefer `-`** over `*` or `+`
+- Lists should **prefer** `-` over `*` or `+`
 
 ## Index
 
 - Engine Information and Specifications
 - Directory Structure
-- Initialization
-- Loading Resources
-- Resource Storage
-- Game Loop
 - Modules
 	- External
 		- Audio Effects
 		- Shader Effects
 	- Internal
 		- The Core Engine
+			- Initialization
+			- Resources
 			- Game Loop
 			- Tick
 			- Render
@@ -36,7 +34,8 @@ proposals should update this file before changing any code content!
 		- The Audio Loader
 - Maps
 - Models
-- Scripting
+- Animation/Faceposing
+- Scripting/Config
 - The Console
 
 ## Engine Information and Specifications
@@ -49,8 +48,9 @@ standalone, and has (albeit limited) backwards and forwards compatibility.
 ## Directory Structure
 
 The distributed package is only a slightly different version of the source tree. The `script/package.sh` script simply creates a
-copy of the repository (minus the `deploy/` directory), removes all source files, and archives it into a tarball (or the
-archive/compression specified with `-a` or `--archive`). It will throw an error if you haven't built yet.
+copy of the repository (minus the `deploy/` directory), removes all source files, organizes the directory structure and archives
+it into a tarball (or the archive/compression specified with `-a`/`-c` or `--archive`/`--compression`). It will throw an error
+if you haven't built yet.
 
 ## Modules
 
@@ -59,21 +59,31 @@ audio processing or map loading. Modules are Rust crates, specifically built for
 
 ### External
 
-**External Modules** are called **Addons**. Addons are placed in the `bin/mod/ext/` directory
+**External Modules** are called **Addons**. Addons are placed in the `bin/mod/ext/` directory. Their resources are placed in
+`res/addon/`
 
 ### Internal
 
-**Internal Modules** can also be called Engine Modules, or just Engines, as they are smaller parts that essentially make up the
-game engine itself as a whole. Most of these are stages in the game loop, except of course the loop itself.
+**Internal Modules** can also be called Engine Modules, Core Modules, or just Engines, as they are smaller core parts that
+essentially make up the game engine itself as a whole. Most of these are stages in the game loop, except of course the loop
+itself.
+
+#### The Core Engine
+
+##### Resources
+
+The XENOTIME Resource Manager centers around an index of all the models, textures, sounds, maps, and other resources that are in
+a certain game. This index is stored in `res/index/`, and keeps record of all the resources so that they can be easily loaded
+along with each map.
 
 #### The UI Framework
 
-The **UI Framework** is a windowing system and GUI toolkit.
+The **UI Framework** is a windowing system and GUI toolkit. It is used for making game menus.
 
 #### The Map Loader
 
-The Map Loader (`xmap-load`) is quick and seamless in design. Map files (`.xmap`, placed in `res/map`) are minimal binary files, so that they can load very
-quickly.
+The Map Loader `xmap-load` is quick and seamless in design. Map files (`.xmap`, placed in `res/map`) are minimal binary files,
+so that they can load very quickly.
 
 ##### How it works
 
@@ -87,6 +97,15 @@ heavily relies on good trigger placement.
 
 Maps in XENOTIME are `.xmap` files. They are created with `xenomap` and loaded into the engine with `xmap-load`.
 
+## Animation/Faceposing
+
+Animations in XENOTIME are `.xscene` files. Animations are created with `xenomate`. They are applied in real time with Events.
+
+## Scripting/Config
+
+Everything that happens in XENOTIME is based around Events. The XenoScript language (`.xscr`) is a scripting language (not
+unlike UNIX shell scripts) that simply executes Events line-by-line.
+
 ## The Console
 
-**The Console** is simply an interface for changing config values and controlling the engine manually.
+**The Console** is an interface for executing Events.
