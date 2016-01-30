@@ -1,6 +1,14 @@
 language: rust
 rust:
-  - nightly
+  - stable
 sudo: false
+before_script:
+  - cargo install rustfmt --root .
+  - cp -r src formatted
+  - ./bin/rustfmt --write-mode=overwrite formatted/*
+script:
+  - cargo build --verbose --release
+  - cargo test --verbose --release
+  - diff --brief -r src formatted/
 notifications:
   email: false
