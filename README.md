@@ -2,7 +2,7 @@
 
 [![Travis Build Status](https://travis-ci.org/neon-sector/xenotime.svg?branch=master)](https://travis-ci.org/neon-sector/xenotime)
 
-### What the heck is XENOTIME?
+### What is it?
 
 **XENOTIME** is a Rust/OpenGL-based 2D/3D game engine/platform. Its primary focuses are efficency, consistency, and immersion.
 
@@ -11,7 +11,7 @@ nothing is implemented yet.
 
 Thanks to **[@ticki](https://github.com/ticki)** for the logo
 
-### What's with the crazy name?
+### What's with the name?
 
 It comes pretty much directly from the mineral [Xenotime](https://en.wikipedia.org/wiki/Xenotime). It was originally a codename,
 but I decided it should just be final. I chose this because it reminded me of Java's `System.nanoTime()` function, which is used
