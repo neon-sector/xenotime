@@ -1,6 +1,6 @@
 # XENOTIME Design Sheet
 
-**Version 0.0.1**
+**Version 1.0.0**
 
 This document is the designs and specifications sheet for the XENOTIME Game Engine. This spec will be updated frequently. Design
 proposals should update this file before changing any code content!
