@@ -11,7 +11,7 @@ nothing is implemented yet.
 
 Thanks to **[@ticki](https://github.com/ticki)** for the logo
 
-### What's with the name?
+### Where does the name come from?
 
 It comes pretty much directly from the mineral [Xenotime](https://en.wikipedia.org/wiki/Xenotime). It was originally a codename,
 but I decided it should just be final. I chose this because it reminded me of Java's `System.nanoTime()` function, which is used
