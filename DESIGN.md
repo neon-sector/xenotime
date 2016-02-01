@@ -19,24 +19,25 @@ proposals should update this file before changing any code content!
 		- Audio Effects
 		- Shader Effects
 	- Internal
-		- The Core Engine
+		- The Core Engine (`xenotime`)
 			- Initialization
 			- Resources
 			- Game Loop
 			- Tick
 			- Render
-		- The Audio Engine
-		- The Post-Processing Effects Engine
-		- The UI Framework
-		- The Map Loader
-		- The Model Loader
-		- The Material Loader
-		- The Audio Loader
+		- The Audio Engine (`xsound`)
+		- The Post-Processing Effects Engine (`xpostproc`)
+		- The UI Framework (`xui`)
+		- The Map Loader (`xmap`)
+		- The Content Loader (`xcontent`)
 - Maps
 - Models
 - Animation/Faceposing
 - Scripting/Config
 - The Console
+- Non-Module Utilities
+	- XENOMAP
+	- 
 
 ## Engine Information and Specifications
 
@@ -68,7 +69,7 @@ audio processing or map loading. Modules are Rust crates, specifically built for
 essentially make up the game engine itself as a whole. Most of these are stages in the game loop, except of course the loop
 itself.
 
-#### The Core Engine
+#### The Core Engine (`xenotime`)
 
 ##### Resources
 
@@ -76,16 +77,14 @@ The XENOTIME Resource Manager centers around an index of all the models, texture
 a certain game. This index is stored in `res/index/`, and keeps record of all the resources so that they can be easily loaded
 along with each map.
 
-#### The UI Framework
+#### The UI Framework (`xui`)
 
 The **UI Framework** is a windowing system and GUI toolkit. It is used for making game menus.
 
-#### The Map Loader
+#### The Map Loader (`xmap`)
 
 The Map Loader `xmap-load` is quick and seamless in design. Map files (`.xmap`, placed in `res/map`) are minimal binary files,
 so that they can load very quickly.
-
-##### How it works
 
 Don't you hate how maps load so slowly in other engines, and pause the game too? `xmap-load`, Unlike other map loaders, does not
 operate on the same thread as the game. When a map is loaded, a new thread is spawned to load the next map, and it is merged
@@ -104,7 +103,8 @@ Animations in XENOTIME are `.xscene` files. Animations are created with `xenomat
 ## Scripting/Config
 
 Everything that happens in XENOTIME is based around Events. The XenoScript language (`.xscr`) is a scripting language (not
-unlike UNIX shell scripts) that simply executes Events line-by-line.
+unlike UNIX shell scripts) that simply executes Events line-by-line. Config files (`.xcfg`) are the same except they can only
+change variables.
 
 ## The Console
 
