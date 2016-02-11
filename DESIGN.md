@@ -100,9 +100,11 @@ XENOTIME is a modular engine. Everything in it, including the core, is a module.
 
 ### Internal
 
-**Internal Modules** can also be called Engine Modules, Core Modules, or just Engines, as they are smaller core parts that essentially make up the game engine itself as a whole. Most of these are stages in the game loop, except of course the loop itself.
+**Internal Modules** can also be called Engine Modules, Core Modules, or just Engines, as they are smaller core parts that essentially make up the game engine itself as a whole. Most of these are stages in the game loop, except of course the loop itself. Placed in `/bin/mod/core/`
 
 #### The Core Engine (`xenotime`)
+
+**The Core Engine** is the central library that brings all the core modules together.
 
 ##### Resources
 
@@ -110,7 +112,7 @@ The XENOTIME Resource Manager centers around an index of all the models, texture
 
 #### The UI Framework (`xui`)
 
-The **UI Framework** is a windowing system and GUI toolkit. It is used for making game menus.
+The **UI Framework** is used to design, manage and control UI, GUI, and HUD.
 
 #### The Map Loader (`xmap`)
 
