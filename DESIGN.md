@@ -20,9 +20,10 @@ This document is the designs and specifications sheet for the XENOTIME Game Engi
 	- Internal
 		- The Core Engine (`xenotime`)
 			- Initialization
-			- Game Loop
-				- Tick
-				- Render
+			- Entity Component System
+				- Entities
+				- Components
+				- Systems
 		- The Audio Engine (`xsound`)
 		- The Post-Processing Effects Engine (`xpostproc`)
 		- The UI Framework (`xui`)
