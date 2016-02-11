@@ -1,0 +1,21 @@
+[package]
+name = "xenotime"
+version = "1.0.0"
+authors = ["Polymetric <polymetricofficial@gmail.com>"]
+
+[[xenotime]]
+
+[[xenomap]]
+
+[[xenomate]]
+
+[[xmap]]
+
+[[xcontent]]
+
+[[xsound]]
+
+[[xpostproc]]
+
+[dependencies]
+clap = "2.0.6"
