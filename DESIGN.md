@@ -45,7 +45,7 @@ This document is the designs and specifications sheet for the XENOTIME Game Engi
 
 ## Directory Structure
 
-The distributed package is only a slightly different version of the source tree. The `script/package.sh` script simply creates a copy of the repository (minus the `deploy/` directory), removes all source files, organizes the directory structure and archives it into a tarball (or the archive/compression specified with `-a`/`-c` or `--archive`/`--compression`).
+The distributed package is only a slightly different version of the source tree. The `make package` script simply creates a copy of the repository (minus the `deploy/` directory), removes all source files, organizes the directory structure and archives it into a tarball (or the archive/compression specified with `-a`/`-c` or `--archive`/`--compression`).
 
 The directory tree should look similar to this:
 
