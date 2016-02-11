@@ -1,7 +1,0 @@
-[package]
-name = "xenotime"
-version = "0.1.0"
-authors = ["Polymetric <polymetricofficial@gmail.com>"]
-
-[dependencies]
-clap = "1.5.5"
