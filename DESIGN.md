@@ -41,7 +41,7 @@ This document is the designs and specifications sheet for the XENOTIME Game Engi
 
 ## Engine Information and Specifications
 
-**XENOTIME** is a 2D/3D game engine/platform primarily written in Rust. The graphical engines (the 3D Rendering Engine, the Shaders Engine, and the Post-Processing Effects Engine, etc.) use OpenGL and Piston. Shaders are all written in GLSL. XENOTIME is designed specifically so it can be **highly compatible**, meaning it is cross-platform, integrates with Steam or runs standalone, and has (albeit limited) backwards and forwards compatibility.
+**XENOTIME** is a 2D/3D game engine/platform written in pure Rust, using SDL2. Shaders are all written in GLSL. XENOTIME is designed specifically so it can be **highly compatible**, meaning it is cross-platform, integrates with Steam or runs standalone, and has (albeit limited) backwards and forwards compatibility.
 
 ## Directory Structure
 
