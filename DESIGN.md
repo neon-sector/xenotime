@@ -117,7 +117,7 @@ The **UI Framework** is used to design, manage and control UI, GUI, and HUD.
 
 #### The Map Loader (`xmap`)
 
-The Map Loader `xmap-load` is quick and seamless in design. Map files (`.xmap`, placed in `res/map`) are minimal binary files, so that they can load very quickly.
+The Map Loader is quick and seamless in design. Map files (`.xmap`, placed in `res/map`) are minimal binary files, so that they can load very quickly.
 
 Don't you hate how maps load so slowly in other engines, and pause the game too? `xmap-load`, Unlike other map loaders, does not operate on the same thread as the game. When a map is loaded, a new thread is spawned to load the next map, and it is merged with the currently loaded map. Once the old map is out of range, it is unloaded. Maps are loaded ahead of time, and there's usually about 2-4 maps loaded at all times. It's up to the game designer to actually use this right, because this design quite heavily relies on good trigger placement.
 
