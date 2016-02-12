@@ -21,3 +21,5 @@ authors = ["Polymetric <polymetricofficial@gmail.com>"]
 
 [dependencies]
 clap = "2.0.6"
+sdl2 = "0.14.0"
+gl = "0.5.2"
