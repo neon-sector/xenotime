@@ -4,11 +4,6 @@
 
 This document is the designs and specifications sheet for the XENOTIME Game Engine. This spec will be updated frequently. Design proposals should update this file before changing any code content! Any sections listed in the index that you can't find in the document are unfinished.
 
-## Markdown Standards/Guidelines
-
-- **Maximum column width** should be **128 characters**
-- Lists should **prefer** `-` over `*` or `+`
-
 ## Index
 
 - Engine Information and Specifications
