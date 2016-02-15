@@ -47,35 +47,41 @@ The directory tree should look similar to this:
 
 ```
 xenotime
-├── bin
+├── target
 │   ├── deps
-│   │   └── clap.rlib
-│   ├── mod
-│   │   ├── core
-│   │   │   ├── xcontent.rlib
-│   │   │   ├── xenotime.rlib
-│   │   │   ├── xmap.rlib
-│   │   │   ├── xpostproc.rlib
-│   │   │   ├── xsound.rlib
-│   │   │   └── xui.rlib
-│   │   └── ext
+│   │   └── libclap.rlib
+│   ├── libxcontent.rlib
+│   ├── libxenotime.rlib
+│   ├── libxmap.rlib
+│   ├── libxpostproc.rlib
+│   ├── libxsound.rlib
+│   ├── libxui.rlib
+│   ├── xenomap
+│   ├── xenomate
 │   └── xenotime
+├── Cargo.toml
 ├── cfg
 │   ├── mapload.xscr
 │   └── startup.xscr
+├── CONTRIBUTING.md
+├── DESIGN.md
+├── LICENSE.md
+├── README.md
 ├── res
+│   └── xenotime
+│       └── logo
 └── src
-    ├── bin
-    │   ├── xenomap.rs
-    │   ├── xenomate.rs
-    │   └── xenotime.rs
-    ├── game_loop
-    │   └── mod.rs
-    ├── init
-    │   └── mod.rs
     ├── lib.rs
     ├── xcontent
     │   └── lib.rs
+    ├── xenomap
+    │   └── main.rs
+    ├── xenomate
+    │   └── main.rs
+    ├── xenoproj
+    │   └── main.rs
+    ├── xenotime
+    │   └── main.rs
     ├── xmap
     │   └── lib.rs
     ├── xpostproc
@@ -96,7 +102,7 @@ XENOTIME is a modular engine. Everything in it, including the core, is a module.
 
 ### Internal
 
-**Internal Modules** can also be called Engine Modules, Core Modules, or just Engines, as they are smaller core parts that essentially make up the game engine itself as a whole. Most of these are stages in the game loop, except of course the loop itself. Placed in `/bin/mod/core/`
+**Internal Modules** can also be called Engine Modules, Core Modules, or just Engines, as they are smaller core parts that essentially make up the game engine itself as a whole. Most of these are stages in the game loop, except of course the loop itself. Placed in `bin/mod/core/`. They are `.rlib`s.
 
 #### The Core Engine (`xenotime`)
 
@@ -127,7 +133,3 @@ Scenes/animations in XENOTIME are `.xscene` files. Scenes are created with XENOM
 ## Scripting/Config
 
 Everything that happens in XENOTIME is based around Events. The XenoScript language (`.xscr`) is a scripting language (not unlike UNIX shell scripts) that simply executes Events line-by-line. Config files (`.xcfg`) are the same except they can only change variables (`let variable_name value`).
-
-## The Console
-
-**The Console** is an interface for executing Events.
