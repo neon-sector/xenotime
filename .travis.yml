@@ -5,7 +5,7 @@ sudo: false
 before_script:
   - cargo install rustfmt --root .
   - cp -r src formatted
-  - ./bin/rustfmt --write-mode=overwrite formatted/*
+  - ./bin/rustfmt --write-mode=overwrite formatted/**/*.rs
 script:
   - cargo build --verbose --release
   - cargo test --verbose --release
