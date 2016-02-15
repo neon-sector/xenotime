@@ -47,3 +47,6 @@ target/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Cargo
+Cargo.lock
