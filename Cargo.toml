@@ -17,8 +17,6 @@ authors = ["Polymetric <polymetricofficial@gmail.com>"]
 
 [[xsound]]
 
-[[xpostproc]]
-
 [dependencies]
 clap = "2.0.6"
 sdl2 = "0.14.0"
