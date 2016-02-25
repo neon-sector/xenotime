@@ -10,8 +10,6 @@ This document is the designs and specifications sheet for the XENOTIME Game Engi
 - Directory Structure
 - Modules
 	- External
-		- Audio Effects
-		- Shader Effects
 	- Internal
 		- The Core Engine (`xenotime`)
 			- Initialization
@@ -19,13 +17,12 @@ This document is the designs and specifications sheet for the XENOTIME Game Engi
 				- Entities
 				- Components
 				- Systems
-		- The Audio Engine (`xsound`)
-		- The Post-Processing Effects Engine (`xpostproc`)
-		- The UI Framework (`xui`)
-		- The Map Loader (`xmap`)
+			- Variables
 		- The Content Loader (`xcontent`)
+		- The Map Loader (`xmap`)
 		- The Raytracing Engine (`xrace`)
 		- The Network/Multiplayer Engine (`xnet`)
+		- The Demo Engine
 - Maps
 - Models
 - Animation/Faceposing
@@ -47,22 +44,11 @@ The directory tree should look similar to this:
 
 ```
 xenotime
-├── target
-│   ├── deps
-│   │   └── libclap.rlib
-│   ├── libxcontent.rlib
-│   ├── libxenotime.rlib
-│   ├── libxmap.rlib
-│   ├── libxpostproc.rlib
-│   ├── libxsound.rlib
-│   ├── libxui.rlib
-│   ├── xenomap
-│   ├── xenomate
-│   └── xenotime
 ├── Cargo.toml
 ├── cfg
+│   ├── init.xscr
 │   ├── mapload.xscr
-│   └── startup.xscr
+│   └── settings.xscr
 ├── CONTRIBUTING.md
 ├── DESIGN.md
 ├── LICENSE.md
@@ -70,26 +56,32 @@ xenotime
 ├── res
 │   └── xenotime
 │       └── logo
-└── src
-    ├── lib.rs
-    ├── xcontent
-    │   └── lib.rs
+├── src
+│   ├── bin
+│   │   ├── xenomap.rs
+│   │   ├── xenomate.rs
+│   │   ├── xenoproj.rs
+│   │   └── xenotime.rs
+│   ├── ecs
+│   │   └── mod.rs
+│   ├── game
+│   ├── init
+│   ├── lib.rs
+│   ├── var
+│   ├── xcontent
+│   └── xmap
+└── target
+    ├── deps
+    │   ├── libclap.rlib
+    │   ├── libgl.rlib
+    │   └── libsdl2.rlib
+    ├── libxcontent.rlib
+    ├── libxenotime.rlib
+    ├── libxmap.rlib
     ├── xenomap
-    │   └── main.rs
     ├── xenomate
-    │   └── main.rs
     ├── xenoproj
-    │   └── main.rs
-    ├── xenotime
-    │   └── main.rs
-    ├── xmap
-    │   └── lib.rs
-    ├── xpostproc
-    │   └── lib.rs
-    ├── xsound
-    │   └── lib.rs
-    └── xui
-        └── lib.rs
+    └── xenotime
 ```
 
 ## Modules
